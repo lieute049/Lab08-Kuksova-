@@ -84,5 +84,37 @@ static int ReadPositive (string message)
     } while(n<=0);
     return n;
 }
+//Итоговая задача. «Меню-калькулятор»
+int choice;
+do
+{
+    Console.WriteLine("1 - summa");
+    Console.WriteLine("2 maximum");
+    Console.WriteLine("3 factorial");
+    Console.WriteLine("4 exit");
+    Console.Write("choice is: ");
+    choice = Convert.ToInt32(Console.ReadLine());
+    switch(choice)
+    {
+        case 1:
+            int x = ReadPositive("a: ");
+            int y = ReadPositive("b: ");
+            Console.WriteLine($"summa: {x + y}");
+            break;
+        case 2:
+            Console.WriteLine($"maximum: {Max(ReadPositive("a: "), ReadPositive("b: "))}");
+            break;
+        case 3:
+            Console.WriteLine($"factorial: {factorial(ReadPositive("n: "))}");
+            break;
+        case 4:
+        default:
+            Console.WriteLine("takogo net")
+            break;
+    }
+} while (choice != 4);
+
+
+
 
 
