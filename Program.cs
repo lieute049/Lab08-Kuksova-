@@ -53,14 +53,36 @@ static double ToFahrenheit(double a)
     return a * 9 / 5 +32;
 }
 //5
+Console.WriteLine(Factorial(5));
+for (int i = 2; i <= 50; i++)
+    if (IsPrime(i)) Console.Write($"{i}");
+Console.WriteLine();
+static long Factorial(int c)
+{
+    long r = 1;
+    for (int i = 2; i <= c; i++) r *= i;
+    return r;
+}
+static bool IsPrime(int c)
+{
+    if (c<2) return false;
+    for (int i = 2; i * i <= c; i ++)
+        if (c % i == 0) return false;
+    return true; 
+}
+//6
+int a1 = ReadPositive("number 1:");
+int a2 = ReadPositive("number 2:");
+Console.WriteLine($"summa: {a1+a2}");
+static int ReadPositive (string message)
+{
+    int n ;
+    do 
+    {
+        Console.Write(message);
+        n = Convert.ToInt32(Console.ReadLine());
+    } while(n<=0);
+    return n;
+}
 
 
-
-
-
-
-
-git init -b main
-git add .
-git commit -m "comm2"
-git push
